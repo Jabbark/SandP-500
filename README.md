@@ -14,12 +14,13 @@
 ![Screenshot (176)](https://github.com/Jabbark/SandP-500/assets/139176049/1a60e040-c22c-4d29-a2c1-cbffb5d9fed3)
 
 
-
-
+-
 
 
 ![Screenshot (179)](https://github.com/Jabbark/SandP-500/assets/139176049/86cf01d4-f5b0-4656-ab47-6c9b46304421)
 
 
 ![Screenshot (178)](https://github.com/Jabbark/SandP-500/assets/139176049/163b9986-22f6-4415-9d5c-b317418b1725)
+
+-
 
