@@ -34,7 +34,7 @@ LIMIT 20
 
 
 4)
--- What is the average Dividend yeild of companies in the S and P 500
+-- What is the average Dividend yield of companies in the S and P 500
 SELECT Sector, ROUND(AVG(`Dividend Yield`),2) AS AVG_DivYield
 FROM finance.financials
 GROUP BY Sector
