@@ -1,0 +1,58 @@
+1)
+-- Which companies are currently the TOP 10 by market capitlization in the S and P 500
+SELECT Symbol, Name, `Market Cap`
+FROM finance.financials
+ORDER BY `Market Cap`DESC
+Limit 10
+
+-- What is the total market capitalization of the TOP 50 companies in the S and P 500
+SELECT SUM(`Market Cap`) AS Total_Capitalization
+FROM finance.financials
+ORDER BY `Market Cap` DESC 
+LIMIT 50
+
+2)
+-- How many companies are there in each sector represented in the S and P 500
+SELECT Sector, COUNT(*) AS NumCompanies
+FROM finance.financials
+GROUP BY Sector
+
+-- What is the average market capitilization of the companies in each sector 
+SELECT Sector, ROUND(AVG(`Market Cap`),2) AS AVG_MarketCap
+FROM finance.financials
+GROUP BY Sector
+
+3)
+-- Which TOP 50 companies have shown the highest percentage growth in stock price over past year
+
+SELECT Name, ROUND(`52 Week High` - `52 Week Low` / `52 Week Low` * 100,2) AS Percent_Growth
+FROM finance.financials
+ORDER  BY Percent_Growth DESC
+LIMIT 50
+
+4)
+-- What is the average Dividend yeild of companies in the S and P 500
+SELECT Sector, ROUND(AVG(`Dividend Yield`),2) AS AVG_DivYield
+FROM finance.financials
+GROUP BY Sector
+ORDER BY AVG_DivYield DESC
+
+5)
+-- Find companies with a price/sales ratio below 1 and a market capitalization above $1 billion
+SELECT Name, `Price/Sales`, `Market Cap`
+FROM finance.financials
+WHERE `Price/Sales` < 1 AND `Market Cap` > 1000000000
+ORDER BY `Price/Sales` DESC, `Market Cap` DESC
+
+
+6) 
+-- Compare the average price/book ratio of companies in the technology sector to that of companies in the Financials sector
+SELECT 
+    ROUND(AVG(CASE WHEN Sector = 'Information Technology' THEN `Price/Book` END),2) AS IT_Avg_Price_Book_Ratio,
+    ROUND(AVG(CASE WHEN Sector = 'Financials' THEN `Price/Book` END),2) AS Financials_Avg_Price_Book_Ratio
+FROM 
+    finance.financials
+WHERE 
+    Sector IN ('Information Technology', 'Financials')
+
+
