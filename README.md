@@ -24,3 +24,9 @@
 
 -
 
+
+
+![Screenshot (182)](https://github.com/Jabbark/SandP-500/assets/139176049/0c75ab72-17c1-476e-9c96-c8514b893efe)
+
+
+![Screenshot (181)](https://github.com/Jabbark/SandP-500/assets/139176049/21d4d7f2-8d71-4662-92ad-b72db5066624)
